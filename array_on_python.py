@@ -72,6 +72,9 @@ class DynamicArray(object):
         
         self.array[self.size - 1] = 0
         self.size -= 1
+        
+        if self.size == self.capacity / 4:
+            self.capacity /= 2
 
     def pop(self, index) -> any:
         if index < 0 or index > self.size - 1:
@@ -84,5 +87,8 @@ class DynamicArray(object):
         
         self.array[self.size - 1] = 0
         self.size -= 1
+
+        if self.size == self.capacity / 4:
+            self.capacity /= 2
 
         return result
